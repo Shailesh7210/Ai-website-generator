@@ -4,6 +4,7 @@ import "./globals.css";
 import {
   ClerkProvider,
 } from '@clerk/nextjs'
+import { Provider } from "@radix-ui/react-tooltip";
 
 
 
@@ -25,7 +26,9 @@ export default function RootLayout({
       <body
        className={outfit.className}
       >
+        <Provider>
         {children}
+        </Provider>
       </body>
     </html>
     </ClerkProvider>
