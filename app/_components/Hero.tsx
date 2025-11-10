@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { ArrowUp, HomeIcon, ImagePlus, Key, LayoutDashboard, User } from 'lucide-react'
 import React, { useState } from 'react'
+import { SignInButton } from '@clerk/nextjs';
 
 const suggestions = [
   {
@@ -51,7 +52,9 @@ function Hero() {
         className='w-full h-24 focus:outline-none focus:ring-0 resize-none'></textarea>
         <div className='flex justify-between items-center'>
         <Button variant={'ghost'} ><ImagePlus/></Button>
-        <Button><ArrowUp/></Button>
+        <SignInButton mode='modal' forceRedirectUrl={'/workspace'}>
+        <Button disabled={!userInput}><ArrowUp/></Button>
+        </SignInButton>
       </div>
       </div>
       
